@@ -11,6 +11,10 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
 
+dependencies = [
+    "typer>=0.27.1",
+    "rich==15.0.0",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -20,7 +24,7 @@ dev = [
 
 
 [project.scripts]
-security-cli = "security_cli.cli.parser:main"
+security-cli = "security_cli.cli.app:app"
 
 
 [tool.setuptools.packages.find]
