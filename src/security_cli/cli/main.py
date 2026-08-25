@@ -3,7 +3,7 @@
 # Vedi il file LICENSE nella radice del progetto per il testo completo.
 
 import typer
-#from commands.hash import app as hash_app
+from commands.hashing import app as hash_app
 
 app = typer.Typer(
     name="appsec",
