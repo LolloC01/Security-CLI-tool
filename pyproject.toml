@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "security-cli"
+version = "0.1.0"
+description = "A Python-based cybersecurity CLI toolkit for hashing, encoding & decoding, password strength analysis, URL analysis, and JWT inspection."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.5",
+]
+
+
+[project.scripts]
+security-cli = "security_cli.cli.parser:main"
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
