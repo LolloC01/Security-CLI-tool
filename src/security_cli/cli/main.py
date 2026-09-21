@@ -4,6 +4,7 @@
 
 import typer
 from .commands.hashing.hash import app as hash_app
+from .commands.codec.codec import app as codec_app
 
 app = typer.Typer(
     name="appsec",
@@ -16,6 +17,13 @@ app.add_typer(
     name="hash",
     help="Hashing commands",
     rich_help_panel="Hashing"
+)
+
+app.add_typer(
+    codec_app,
+    name="codec",
+    help="Codec commands",
+    rich_help_panel="Codec"
 )
 
 if __name__ == "__main__":
