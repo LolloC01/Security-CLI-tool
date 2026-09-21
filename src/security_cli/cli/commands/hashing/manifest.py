@@ -1,10 +1,11 @@
 from dataclasses import dataclass
 from .file_entry import FileEntry, FileEdited
+from pathlib import Path
 
 
 @dataclass
 class Manifest:
-    directory: str
+    directory: Path
     algorithm: str
     directory_hash: str
     file_count: int

@@ -12,10 +12,10 @@ appsec hash
 from pathlib import Path
 import typer
 
-from manifest import Manifest, ManifestComparison
-import output as output_utils
-from algorithm import Algorithm
-import hashing as hashing_utils
+from .manifest import Manifest, ManifestComparison
+from .output import HashOutput as output_utils
+from .algorithm import Algorithm
+from .hashing import HashFunctions as hashing_utils
 
 app = typer.Typer()
 
