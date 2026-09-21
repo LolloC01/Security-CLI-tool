@@ -14,6 +14,8 @@ app = typer.Typer(
 app.add_typer(
     hash_app,
     name="hash",
+    help="Hashing commands",
+    rich_help_panel="Hashing"
 )
 
 if __name__ == "__main__":

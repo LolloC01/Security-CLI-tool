@@ -53,7 +53,7 @@ class HashOutput:
         Display the result of a successful hash verification.
 
         Args:
-            file_path (str): The path to the verified file.
+            file_path (Path): The path to the verified file.
             algorithm (str): The hashing algorithm used.
             hash_value (str): The calculated hash value of the file.
         """
@@ -74,7 +74,7 @@ class HashOutput:
         Display the result of a failed hash verification.
 
         Args:
-            file_path (str): The path to the file being verified.
+            file_path (Path): The path to the file being verified.
             algorithm (str): The hashing algorithm used.
             known_hash (str): The known hash value to compare against.
             calculated_hash (str): The calculated hash value of the file.
@@ -97,8 +97,8 @@ class HashOutput:
         Display the result of a successful hash comparison between two files.
 
         Args:
-            file1 (str): The path to the first file.
-            file2 (str): The path to the second file.
+            file1 (Path): The path to the first file.
+            file2 (Path): The path to the second file.
             algorithm (str): The hashing algorithm used.
             hash_value (str): The common hash value of both files.
         """
@@ -122,8 +122,8 @@ class HashOutput:
         Display the result of a failed hash comparison between two files.
 
         Args:
-            file1 (str): The path to the first file.
-            file2 (str): The path to the second file.
+            file1 (Path): The path to the first file.
+            file2 (Path): The path to the second file.
             algorithm (str): The hashing algorithm used.
         """
         HashOutput.console.print(
@@ -141,10 +141,10 @@ class HashOutput:
     @staticmethod
     def display_algorithm():
         """
-        Display the name of a hashing algorithm.
+        Display the details of the available hashing algorithms.
 
         Args:
-            algorithm (str): The name of the hashing algorithm.
+            None
         """
         table = Table(
             title="Supported Hash Algorithms",
@@ -216,12 +216,12 @@ class HashOutput:
         )
 
     @staticmethod
-    def display_directory_hash(directory_path: str, algorithm: str, directory_hash: str, file_count: int):
+    def display_directory_hash(directory_path: Path, algorithm: str, directory_hash: str, file_count: int):
         """
         Display the hash of a directory and the number of files hashed.
 
         Args:
-            directory_path (str): The path to the directory.
+            directory_path (Path): The path to the directory.
             algorithm (str): The hashing algorithm used.
             directory_hash (str): The calculated hash value of the directory.
             file_count (int): The number of files hashed in the directory.
@@ -267,8 +267,8 @@ class HashOutput:
         Display the result of a successful directory comparison.
 
         Args:
-            directory1 (str): The path to the first directory.
-            directory2 (str): The path to the second directory.
+            directory1 (Path): The path to the first directory.
+            directory2 (Path): The path to the second directory.
             algorithm (str): The hashing algorithm used.
             directory_hash (str): The calculated hash value of the directories.
         """
@@ -290,8 +290,8 @@ class HashOutput:
         Display the result of a failed directory comparison.
 
         Args:
-            directory1 (str): The path to the first directory.
-            directory2 (str): The path to the second directory.
+            directory1 (Path): The path to the first directory.
+            directory2 (Path): The path to the second directory.
             algorithm (str): The hashing algorithm used.
             comparison (ManifestComparison): The comparison result containing new, removed, and edited files.
             verbose (bool): Whether to display detailed information about the differences.
